@@ -1,6 +1,26 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
+   Squartiqa 4F (licensed, see public/fonts/README.md). The family has no Bold,
+   so Regular covers weights 400-900 and Light covers 100-399. Falls back to
+   Barlow Condensed while the files are missing.
+   ------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Squartiqa 4F";
+  src: url("/fonts/Squartiqa4F-Regular.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Squartiqa 4F";
+  src: url("/fonts/Squartiqa4F-Light.woff2") format("woff2");
+  font-weight: 100 399;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------------------
    Design tokens (also exposed to Tailwind as bg-forest, text-orange, font-display …)
    ------------------------------------------------------------------------- */
 @theme inline {
@@ -16,7 +36,7 @@
   --color-orange-dark: #9e4017;    /* hover / link state */
   --color-orange-bright: #e85b25;  /* text accent on dark panels only (AA on forest) */
   --color-offwhite: #fffdf7;
-  --font-display: var(--font-barlow), "Arial Narrow", Arial, sans-serif;
+  --font-display: "Squartiqa 4F", var(--font-barlow), "Arial Narrow", Arial, sans-serif;
   --font-body: var(--font-inter), Arial, sans-serif;
 }
 
@@ -41,7 +61,7 @@
      does not. Buttons and large fills always use --orange. */
   --accent: var(--orange);
   --white: #fffdf7;
-  --display: var(--font-barlow), "Arial Narrow", Arial, sans-serif;
+  --display: "Squartiqa 4F", var(--font-barlow), "Arial Narrow", Arial, sans-serif;
   --body: var(--font-inter), Arial, sans-serif;
   --max: 1440px;
 }
