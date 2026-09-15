@@ -13,9 +13,11 @@ export function SiteFooter() {
             <Image src={logoOnDark} alt={site.name} sizes="240px" className="brand-logo" />
           </div>
           <p className="footer-message">
-            <strong>{site.tagline}</strong>
+            <strong>
+              {site.name}™ · {site.tagline}
+            </strong>
             <br />
-            One hunting strategy built around the hunter—not the filter.
+            {site.patent}
           </p>
           <div className="footer-links">
             {site.footerLinks.map((item) => (
@@ -26,6 +28,7 @@ export function SiteFooter() {
             <a href={site.app.login}>Sign in</a>
           </div>
         </div>
+        <p className="footer-disclaimer">{site.disclaimer}</p>
         <div className="footer-bottom">
           <span>
             © <CopyrightYear /> {site.name}. All rights reserved.

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 import logoOnDark from "@/public/brand/logo-on-dark.png";
+import { OfferCta } from "./landing/offer-cta";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -40,17 +41,16 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a className="mobile-cta" href={site.app.signup} onClick={close}>
-            Start free trial
+          <a className="sign-in nav-sign-in" href={site.app.login} onClick={close}>
+            Sign in
           </a>
+          <OfferCta className="mobile-cta" onClick={close} />
         </nav>
         <div className="header-actions">
           <a className="sign-in" href={site.app.login}>
             Sign in
           </a>
-          <a className="button button-primary" href={site.app.signup}>
-            Start free trial
-          </a>
+          <OfferCta />
         </div>
         <button
           className="menu-toggle"
