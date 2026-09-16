@@ -65,7 +65,11 @@ function PlanCard({
   const isFree = plan.monthly === 0;
   const amount = billing === "annual" ? plan.annual : plan.monthly;
   const savings = annualSavings(plan);
-  const href = plan.product ? site.app.product(plan.product) : site.app.signup;
+  // Carries the visitor's monthly/annual toggle choice into the app so the
+  // link opens the SAME interval they were just looking at, not always
+  // monthly (FIXED 2026-09-15 -- site.app.product() used to take no
+  // interval at all, so this toggle had no effect on the link).
+  const href = plan.product ? site.app.product(plan.product, billing) : site.app.signup;
 
   return (
     <article className={`plan${plan.featured ? " is-featured" : ""}`}>
