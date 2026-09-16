@@ -23,6 +23,36 @@ const components: PortableTextComponents = {
         <code>{value?.code}</code>
       </pre>
     ),
+    table: ({ value }) => {
+      const rows: { _key?: string; cells?: string[] }[] = value?.rows ?? [];
+      if (rows.length === 0) return null;
+      const [head, ...body] = rows;
+      return (
+        <div className="post-table">
+          {value?.caption && <p className="post-table-caption">{value.caption}</p>}
+          <table>
+            <thead>
+              <tr>
+                {(head.cells ?? []).map((cell, i) => (
+                  <th key={i} scope="col">
+                    {cell}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {body.map((row, r) => (
+                <tr key={row._key ?? r}>
+                  {(row.cells ?? []).map((cell, i) => (
+                    <td key={i}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
   marks: {
     link: ({ children, value }) => {

@@ -63,5 +63,6 @@ export const blockContentType = defineType({
       name: "codeBlock",
       title: "Code",
     }),
+    defineArrayMember({ type: "table" }),
   ],
 });
