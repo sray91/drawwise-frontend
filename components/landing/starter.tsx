@@ -1,6 +1,7 @@
 "use client";
 
 import { OfferCta } from "./offer-cta";
+import { SeasonPicker } from "./season-picker";
 import { useOffer } from "./offer-context";
 import { Reveal } from "./reveal";
 
@@ -15,6 +16,7 @@ export function Starter() {
             <p className="eyebrow">{offer.starterEyebrow}</p>
             <h2>{offer.starterTitle}</h2>
             <p>{offer.starterIntro}</p>
+            <SeasonPicker />
           </div>
           <div className="starter-offer">
             <h3>{offer.starterHeading}</h3>
