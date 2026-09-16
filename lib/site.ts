@@ -1,5 +1,5 @@
 /** Site-wide copy and links. Edit here to change shared content. */
-const appUrl = process.env.NEXT_PUBLIC_APP_URL || "";
+const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://app.drawwise.ai").replace(/\/+$/, "");
 
 export const site = {
   name: "DrawWise",
@@ -10,7 +10,7 @@ export const site = {
   patent: "Patent pending, App. No. 64/133,416",
   disclaimer:
     "DrawWise is an independent hunting planning and research tool and is not affiliated with any state wildlife agency. Draw odds, recommendations, season dates, legal restrictions, and photo scores must be verified against the relevant agency rules and, for official scoring, by an authorized measurer.",
-  /** Links into the DrawWise app. Set NEXT_PUBLIC_APP_URL to point at it. */
+  /** Links into the DrawWise app. Override with NEXT_PUBLIC_APP_URL if needed. */
   app: {
     signup: `${appUrl}/signup`,
     login: `${appUrl}/login`,
