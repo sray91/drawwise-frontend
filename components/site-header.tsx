@@ -41,13 +41,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a className="sign-in nav-sign-in" href={site.app.login} onClick={close}>
+          <a className="sign-in nav-sign-in" href={site.app.signin} onClick={close}>
             Sign in
           </a>
           <OfferCta className="mobile-cta" onClick={close} />
         </nav>
         <div className="header-actions">
-          <a className="sign-in" href={site.app.login}>
+          <a className="sign-in" href={site.app.signin}>
             Sign in
           </a>
           <OfferCta />

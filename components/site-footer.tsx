@@ -25,7 +25,7 @@ export function SiteFooter() {
                 {item.label}
               </Link>
             ))}
-            <a href={site.app.login}>Sign in</a>
+            <a href={site.app.signin}>Sign in</a>
           </div>
         </div>
         <p className="footer-disclaimer">{site.disclaimer}</p>

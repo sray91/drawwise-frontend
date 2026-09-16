@@ -1,6 +1,9 @@
 /** Site-wide copy and links. Edit here to change shared content. */
 const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://app.drawwise.ai").replace(/\/+$/, "");
 
+/** Product keys the app accepts in `?product=`. */
+export type AppProduct = "founding" | "standard" | "draw_watch" | "score_wise";
+
 export const site = {
   name: "DrawWise",
   tagline: "Outthink. Outplan.",
@@ -10,10 +13,17 @@ export const site = {
   patent: "Patent pending, App. No. 64/133,416",
   disclaimer:
     "DrawWise is an independent hunting planning and research tool and is not affiliated with any state wildlife agency. Draw odds, recommendations, season dates, legal restrictions, and photo scores must be verified against the relevant agency rules and, for official scoring, by an authorized measurer.",
-  /** Links into the DrawWise app. Override with NEXT_PUBLIC_APP_URL if needed. */
+  /**
+   * Links into the DrawWise app. Override the host with NEXT_PUBLIC_APP_URL if needed.
+   * The app reads these query parameters:
+   *   Sign up  -> /?signup=1
+   *   Sign in  -> /?signin=1
+   *   Product  -> /?product=founding | standard | draw_watch | score_wise
+   */
   app: {
-    signup: `${appUrl}/signup`,
-    login: `${appUrl}/login`,
+    signup: `${appUrl}/?signup=1`,
+    signin: `${appUrl}/?signin=1`,
+    product: (id: AppProduct) => `${appUrl}/?product=${id}`,
   },
   nav: [
     { href: "/#start", label: "How it starts" },

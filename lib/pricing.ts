@@ -1,3 +1,5 @@
+import type { AppProduct } from "./site";
+
 /** Membership plans. Prices are USD; annual is billed once per year. */
 export type PlanId = "free" | "scorewise-plus" | "drawwise-pro" | "complete";
 
@@ -10,6 +12,8 @@ export type Plan = {
   features: string[];
   cta: string;
   featured?: boolean;
+  /** App product opened by the CTA (`/?product=...`). Omit to send to sign-up. */
+  product?: AppProduct;
 };
 
 export const PLANS: Plan[] = [
@@ -27,10 +31,12 @@ export const PLANS: Plan[] = [
       "Guides and deadlines",
     ],
     cta: "Start free",
+    // Free account: plain sign-up, no product.
   },
   {
     id: "scorewise-plus",
     name: "ScoreWise Plus",
+    product: "score_wise",
     monthly: 9,
     annual: 99,
     blurb: "Score the animals you find, with the reasoning.",
@@ -46,6 +52,7 @@ export const PLANS: Plan[] = [
   {
     id: "drawwise-pro",
     name: "DrawWise Pro",
+    product: "standard",
     monthly: 15,
     annual: 150,
     blurb: "Every application decision with the evidence behind it.",
@@ -62,6 +69,7 @@ export const PLANS: Plan[] = [
   {
     id: "complete",
     name: "Complete",
+    product: "founding",
     monthly: 20,
     annual: 200,
     blurb: "Scoring and strategy together, all season long.",
