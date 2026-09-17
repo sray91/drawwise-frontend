@@ -40,6 +40,8 @@ export type SeasonalOffer = {
   headline: string;
   lede: string;
   cta: string;
+  /** Compact label for the phone header, where the full cta does not fit. */
+  ctaShort: string;
   note: string;
   context: string;
   know: string;
@@ -87,6 +89,7 @@ export const seasonalOffers: Record<Season, SeasonalOffer> = {
     headline: "See the animal. Know the next move.",
     lede: "Bring DrawWise the animal in front of you. It connects a Boone and Crockett aligned photo estimate, age and maturity evidence, visible abnormal points, uncertainty, hunt context, and the standard you set.",
     cta: "Score an animal free",
+    ctaShort: "Score free",
     note: "Start with three complete animal evaluations, one active-hunt readiness plan, one next-hunt decision, and seven days to question the results. No credit card or automatic charge.",
     context: "September usually puts field decisions first. Choose another job if that is not where you are.",
     know: "What the image supports, what remains uncertain, and whether the animal fits your target",
@@ -139,6 +142,7 @@ export const seasonalOffers: Record<Season, SeasonalOffer> = {
     headline: "Make the hunt ready.",
     lede: "Bring DrawWise the hunt you already have. It connects dates, access, licenses, conditions, preparation, camera evidence, target animals, and the decisions that can still change the outcome.",
     cta: "Build my hunt plan free",
+    ctaShort: "Plan free",
     note: "Start with one complete hunt workspace, three animal evaluations, one readiness recommendation, one strategy decision, and seven days to work through it. No credit card or automatic charge.",
     context: "July and August usually move scouting and preparation forward, while some early hunts have already begun. Choose another job if your calendar says otherwise.",
     know: "What is confirmed, what is missing, and what has changed around the hunt you already have",
@@ -191,6 +195,7 @@ export const seasonalOffers: Record<Season, SeasonalOffer> = {
     headline: "Know which hunt deserves your points.",
     lede: "Bring DrawWise one consequential application decision. It connects your points, goals, best alternatives, hunt fit, time, budget, and the exact deadline that controls the choice.",
     cta: "Make my first draw decision free",
+    ctaShort: "Start free",
     note: "Start with three complete decision receipts, one cross-state portfolio comparison, and seven days to challenge the plan. No credit card or automatic charge.",
     context: "From winter through the main application months, verified deadlines and point decisions move forward. Choose another job if a hunt already requires attention.",
     know: "Where your exact hunt and pool stand, what changed, and how dependable the evidence is",
@@ -243,6 +248,7 @@ export const seasonalOffers: Record<Season, SeasonalOffer> = {
     headline: "Turn this season into the next right move.",
     lede: "Bring DrawWise your hunts, applications, sightings, animals, corrections, and outcomes. It reconciles what happened with the plan and identifies what should change next while early decisions are already arriving.",
     cta: "Review my season free",
+    ctaShort: "Review free",
     note: "Start with one complete season review, one updated cross-state portfolio, one next application decision, and seven days to work through it. No credit card or automatic charge.",
     context: "December often overlaps late hunts, outcome review, and the first application decisions. Choose the job that matters to you now.",
     know: "What this season confirmed, contradicted, or changed",

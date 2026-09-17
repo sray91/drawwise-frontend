@@ -10,7 +10,6 @@ import { ReasonDialog } from "@/components/landing/reason-dialog";
 import { ReasoningDemo } from "@/components/landing/reasoning-demo";
 import { Reveal } from "@/components/landing/reveal";
 import { Starter } from "@/components/landing/starter";
-import { StickyCta } from "@/components/landing/sticky-cta";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { PostCard } from "@/components/post-card";
 import { site } from "@/lib/site";
@@ -40,7 +39,6 @@ export default function HomePage() {
         <LatestPosts />
       </Suspense>
       <NewsletterCta source="landing" />
-      <StickyCta />
       <ReasonDialog />
     </>
   );

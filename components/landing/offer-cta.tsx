@@ -9,10 +9,13 @@ export function OfferCta({
   className = "button button-primary",
   href = site.app.signup,
   onClick,
+  short = false,
 }: {
   className?: string;
   href?: string;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+  /** Use the compact label and drop the arrow (phone header). */
+  short?: boolean;
 }) {
   const { offer, trackCta } = useOffer();
   return (
@@ -24,10 +27,12 @@ export function OfferCta({
         trackCta();
       }}
     >
-      {offer.cta}
-      <span className="arrow" aria-hidden="true">
-        →
-      </span>
+      {short ? offer.ctaShort : offer.cta}
+      {!short && (
+        <span className="arrow" aria-hidden="true">
+          →
+        </span>
+      )}
     </a>
   );
 }

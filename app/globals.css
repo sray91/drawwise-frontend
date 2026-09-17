@@ -117,6 +117,14 @@ button { color: inherit; }
   border-bottom: 1px solid rgba(255,255,255,.12);
   color: var(--white);
   background: rgba(7,11,9,.86);
+}
+/* The blur lives on a pseudo-element: backdrop-filter on the header itself
+   would make it the containing block for the fixed-position mobile nav. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
@@ -152,7 +160,7 @@ button { color: inherit; }
 }
 .nav a:hover, .sign-in:hover { color: var(--white); }
 .header-actions { display: flex; align-items: center; gap: 22px; }
-.menu-toggle { display: none; }
+.header-mobile { display: none; }
 
 .button {
   min-height: 50px;
@@ -541,8 +549,7 @@ button { color: inherit; }
 .posts-section { background: var(--cream); border-top: 1px solid var(--line); }
 .posts-section .section-head { margin-bottom: 0; }
 
-/* Sticky phone CTA + reasoning dialog ---------------------------------------- */
-.sticky-cta { display: none; }
+/* Reasoning dialog ------------------------------------------------------------ */
 .reason-dialog {
   width: min(720px, calc(100% - 30px));
   max-height: min(800px, calc(100vh - 30px));
@@ -596,12 +603,15 @@ button { color: inherit; }
   .header-inner { grid-template-columns: 1fr auto; min-height: 76px; }
   .brand { width: 220px; }
   .header-actions { display: none; }
+  .header-mobile { display: flex; align-items: center; gap: 10px; }
+  .header-cta { min-height: 42px; padding: 0 14px; font-size: .71rem; }
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 72px;
     min-height: 42px;
+    padding: 0 12px;
     border: 1px solid rgba(255,255,255,.25);
     border-radius: 3px;
     color: var(--white);
@@ -611,6 +621,7 @@ button { color: inherit; }
     letter-spacing: .1em;
     text-transform: uppercase;
   }
+  .menu-toggle-icon { display: none; }
   .nav {
     position: fixed;
     inset: 76px 0 0;
@@ -649,9 +660,13 @@ button { color: inherit; }
 @media (max-width: 650px) {
   .wrap { width: min(calc(100% - 32px), var(--max)); }
   .header-inner { min-height: 70px; }
-  .brand { width: 190px; }
+  .brand { width: 150px; }
+  .header-mobile { gap: 8px; }
+  .header-cta { padding: 0 12px; }
+  .menu-toggle { min-width: 42px; padding: 0; }
+  .menu-toggle-label { display: none; }
+  .menu-toggle-icon { display: block; }
   .nav { inset: 70px 0 0; }
-  body { padding-bottom: 72px; }
   .hero { padding: 112px 0 56px; }
   .hero h1 { font-size: clamp(3.2rem, 14vw, 4.6rem); }
   .hero-actions { align-items: stretch; flex-direction: column; }
@@ -684,8 +699,6 @@ button { color: inherit; }
   .membership-card { padding: 38px 23px; }
   .dialog-head, .dialog-body { padding-left: 20px; padding-right: 20px; }
   .dialog-cta .button { width: 100%; }
-  .sticky-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 35; display: flex; box-shadow: 0 14px 40px rgba(7,20,12,.32); }
-  .sticky-cta .button { width: 100%; }
   .footer-top { grid-template-columns: 1fr; gap: 24px; }
   .footer-logo { width: 205px; }
   .footer-links { grid-column: auto; justify-content: flex-start; }
