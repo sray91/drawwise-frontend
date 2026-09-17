@@ -59,7 +59,7 @@ export function ReasonDialog() {
           </div>
         ))}
         <div className="dialog-cta">
-          <OfferCta />
+          <OfferCta onClick={closeReason} />
           <button className="button button-paper" type="button" onClick={closeReason}>
             Keep exploring
           </button>

@@ -53,7 +53,7 @@ export function SiteHeader() {
           <OfferCta />
         </div>
         <div className="header-mobile">
-          <OfferCta className="button button-primary header-cta" href="/#membership" onClick={close} short />
+          <OfferCta className="button button-primary header-cta" onClick={close} short />
           <button
             className="menu-toggle"
             type="button"

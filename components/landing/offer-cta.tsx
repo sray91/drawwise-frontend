@@ -1,13 +1,15 @@
 "use client";
 
 import type { MouseEvent } from "react";
-import { site } from "@/lib/site";
 import { useOffer } from "./offer-context";
 
-/** The seasonal primary call to action. The label follows the active offer. */
+/**
+ * The seasonal primary call to action. The label follows the active offer.
+ * It scrolls to the membership section so the visitor picks a plan there.
+ */
 export function OfferCta({
   className = "button button-primary",
-  href = site.app.signup,
+  href = "/#membership",
   onClick,
   short = false,
 }: {
