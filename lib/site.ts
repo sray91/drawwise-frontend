@@ -1,8 +1,8 @@
 /** Site-wide copy and links. Edit here to change shared content. */
 const appUrl = (process.env.NEXT_PUBLIC_APP_URL || "https://app.drawwise.ai").replace(/\/+$/, "");
 
-/** Product keys the app accepts in `?product=`. */
-export type AppProduct = "founding" | "standard" | "draw_watch" | "score_wise";
+/** Plans the app sells. The app's product key is `<plan>_<monthly|annual>`. */
+export type AppProduct = "scorewise_plus" | "drawwise_pro" | "complete";
 
 export const site = {
   name: "DrawWise",
@@ -18,12 +18,14 @@ export const site = {
    * The app reads these query parameters:
    *   Sign up  -> /?signup=1
    *   Sign in  -> /?signin=1
-   *   Product  -> /?product=founding | standard | draw_watch | score_wise
+   *   Product  -> /?product=<plan>_<monthly|annual>, e.g. complete_annual
+   * The product key must be one the app's billing knows, or the pick is dropped.
    */
   app: {
     signup: `${appUrl}/?signup=1`,
     signin: `${appUrl}/?signin=1`,
-    product: (id: AppProduct) => `${appUrl}/?product=${id}`,
+    product: (id: AppProduct, billing: "monthly" | "annual" = "annual") =>
+      `${appUrl}/?product=${id}_${billing}`,
   },
   nav: [
     { href: "/#start", label: "How it starts" },

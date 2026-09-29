@@ -1,15 +1,18 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { site } from "@/lib/site";
 import { useOffer } from "./offer-context";
 
 /**
  * The seasonal primary call to action. The label follows the active offer.
- * It scrolls to the membership section so the visitor picks a plan there.
+ * It opens account creation in the app directly. It used to scroll to the
+ * membership section, which made "Sign up" a second click and a scroll for
+ * everyone who had already decided; plans stay one menu link away.
  */
 export function OfferCta({
   className = "button button-primary",
-  href = "/#membership",
+  href = site.app.signup,
   onClick,
   short = false,
 }: {

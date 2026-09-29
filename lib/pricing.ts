@@ -36,7 +36,7 @@ export const PLANS: Plan[] = [
   {
     id: "scorewise-plus",
     name: "ScoreWise Plus",
-    product: "score_wise",
+    product: "scorewise_plus",
     monthly: 9,
     annual: 99,
     blurb: "Score the animals you find, with the reasoning.",
@@ -52,7 +52,7 @@ export const PLANS: Plan[] = [
   {
     id: "drawwise-pro",
     name: "DrawWise Pro",
-    product: "standard",
+    product: "drawwise_pro",
     monthly: 15,
     annual: 150,
     blurb: "Every application decision with the evidence behind it.",
@@ -69,7 +69,7 @@ export const PLANS: Plan[] = [
   {
     id: "complete",
     name: "Complete",
-    product: "founding",
+    product: "complete",
     monthly: 20,
     annual: 200,
     blurb: "Scoring and strategy together, all season long.",

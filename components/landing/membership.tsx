@@ -65,7 +65,7 @@ function PlanCard({
   const isFree = plan.monthly === 0;
   const amount = billing === "annual" ? plan.annual : plan.monthly;
   const savings = annualSavings(plan);
-  const href = plan.product ? site.app.product(plan.product) : site.app.signup;
+  const href = plan.product ? site.app.product(plan.product, billing) : site.app.signup;
 
   return (
     <article className={`plan${plan.featured ? " is-featured" : ""}`}>
