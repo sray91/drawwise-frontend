@@ -62,7 +62,7 @@ export const PLANS: Plan[] = [
       "Personalized recommendations and alternatives",
       "Opportunity cost, evidence dates, and unknowns",
       "Alerts",
-      "Three ScoreWise animals",
+      "60 ScoreWise animals per year",
     ],
     cta: "Choose plan",
   },
@@ -75,7 +75,7 @@ export const PLANS: Plan[] = [
     blurb: "Scoring and strategy together, all season long.",
     features: [
       "All DrawWise and ScoreWise features",
-      "60 animals per year",
+      "100 animals per year",
       "Unified hunt and animal history",
       "Outcome review and calibration",
     ],
