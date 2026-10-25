@@ -17,11 +17,11 @@ export function Membership() {
       <div className="wrap">
         <Reveal className="membership-card">
           <div className="membership-copy">
-            <p className="eyebrow">Membership</p>
-            <h2>Stop assembling the answer yourself.</h2>
+            <p className="eyebrow">Pricing</p>
+            <h2>Less time in spreadsheets. More time hunting.</h2>
             <p>
-              Every application, point purchase, and hunting season uses time you do not
-              get back. Put the complete decision in one place.
+              Points, applications, scoring and planning eat hours every year. Start free,
+              and keep paying only if DrawWise saves you that time.
             </p>
             <p className="free-first">{offer.membershipLead}</p>
           </div>

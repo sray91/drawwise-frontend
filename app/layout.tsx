@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Anton, Inter } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const barlow = Barlow_Condensed({
-  variable: "--font-barlow",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: "400",
   display: "swap",
 });
 
@@ -41,7 +41,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${barlow.variable} ${inter.variable}`}>
+    <html lang="en" className={`${anton.variable} ${inter.variable}`}>
       <body>{children}</body>
       <GoogleAnalytics gaId="G-Q0PV5EE37S" />
       <Script id="ms-clarity" strategy="afterInteractive">

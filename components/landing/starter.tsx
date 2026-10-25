@@ -16,6 +16,10 @@ export function Starter() {
             <p className="eyebrow">{offer.starterEyebrow}</p>
             <h2>{offer.starterTitle}</h2>
             <p>{offer.starterIntro}</p>
+            <p>
+              No long form to fill out. DrawWise asks only for what changes the answer, like
+              your state, species, points or target animal.
+            </p>
             <SeasonPicker />
           </div>
           <div className="starter-offer">

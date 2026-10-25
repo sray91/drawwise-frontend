@@ -36,9 +36,6 @@ type OfferContextValue = {
   variant: TrialVariant;
   offer: SeasonalOffer;
   setSeason: (season: Season) => void;
-  reasonOpen: boolean;
-  openReason: () => void;
-  closeReason: () => void;
   /** Fire the analytics event for a primary call-to-action click. */
   trackCta: () => void;
 };
@@ -80,7 +77,6 @@ export function OfferProvider({
 }) {
   const preview = usePreviewParams();
   const [chosenSeason, setSeason] = useState<Season | null>(null);
-  const [reasonOpen, setReasonOpen] = useState(false);
   const season = chosenSeason ?? preview.season ?? initialSeason;
   const variant = preview.variant ?? "seasonal";
 
@@ -105,9 +101,6 @@ export function OfferProvider({
       variant,
       offer,
       setSeason,
-      reasonOpen,
-      openReason: () => setReasonOpen(true),
-      closeReason: () => setReasonOpen(false),
       trackCta: () =>
         document.dispatchEvent(
           new CustomEvent("drawwise:offer-cta", {
@@ -115,7 +108,7 @@ export function OfferProvider({
           }),
         ),
     };
-  }, [season, variant, reasonOpen]);
+  }, [season, variant]);
 
   return <OfferContext.Provider value={value}>{children}</OfferContext.Provider>;
 }
