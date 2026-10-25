@@ -17,7 +17,7 @@ export default function BlogIndexPage() {
       <section className="page-top bg-forest text-offwhite">
         <div className="wrap py-20 sm:py-28">
           <p className="eyebrow">The DrawWise blog</p>
-          <h1 className="font-display text-[clamp(3.4rem,6vw,6.4rem)] font-semibold uppercase leading-[.9] tracking-[-.025em]">
+          <h1 className="font-display text-[clamp(3.4rem,6vw,6.4rem)] font-semibold uppercase leading-[1.02] tracking-[.015em]">
             Field notes.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-offwhite/70">

@@ -8,7 +8,7 @@ export const site = {
   name: "DrawWise",
   tagline: "Outthink. Outplan.",
   description:
-    "Start free with the DrawWise capability that matters now. Score animals, prepare hunts, make application decisions, and see the reasoning before deciding to join.",
+    "Draw odds, rut timing and buck scores, researched for your hunt. DrawWise ranks Western tags against your points, maps whitetail rut timing by county, and scores animals from a photo. Start free.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://drawwise.com",
   patent: "Patent pending, App. No. 64/133,416",
   disclaimer:
@@ -19,25 +19,28 @@ export const site = {
    *   Sign up  -> /?signup=1
    *   Sign in  -> /?signin=1
    *   Product  -> /?product=<plan>_<monthly|annual>, e.g. complete_annual
+   *   Score    -> /#/score (photo scoring entry)
    * The product key must be one the app's billing knows, or the pick is dropped.
    */
   app: {
     signup: `${appUrl}/?signup=1`,
     signin: `${appUrl}/?signin=1`,
+    score: `${appUrl}/#/score`,
     product: (id: AppProduct, billing: "monthly" | "annual" = "annual") =>
       `${appUrl}/?product=${id}_${billing}`,
   },
   nav: [
-    { href: "/#start", label: "How it starts" },
-    { href: "/#reasoning", label: "See a recommendation" },
-    { href: "/#membership", label: "Membership" },
+    { href: "/#points", label: "Draw odds" },
+    { href: "/#scoring", label: "Photo scoring" },
+    { href: "/#membership", label: "Pricing" },
     { href: "/blog", label: "Blog" },
   ],
   footerLinks: [
-    { href: "/#starter", label: "Free starter" },
-    { href: "/#start", label: "How it starts" },
-    { href: "/#included", label: "What's included" },
-    { href: "/#membership", label: "Membership" },
+    { href: "/#starter", label: "What's free" },
+    { href: "/#points", label: "Draw odds" },
+    { href: "/#scoring", label: "Photo scoring" },
+    { href: "/#timing", label: "Rut timing & maps" },
+    { href: "/#membership", label: "Pricing" },
     { href: "/blog", label: "Blog" },
     { href: "/#newsletter", label: "Newsletter" },
     { href: "/privacy", label: "Privacy" },

@@ -76,7 +76,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
                   ))}
                 </ul>
               )}
-              <h1 className="mt-4 font-display text-[clamp(3rem,5.5vw,5.6rem)] font-semibold uppercase leading-[.92] tracking-[-.025em] text-balance">
+              <h1 className="mt-4 font-display text-[clamp(3rem,5.5vw,5.6rem)] font-semibold uppercase leading-[1.02] tracking-[.015em] text-balance">
                 {post.title}
               </h1>
               {post.excerpt && (

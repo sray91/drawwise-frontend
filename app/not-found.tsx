@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main className="page-top flex min-h-screen flex-col items-center justify-center bg-forest px-6 py-32 text-center text-offwhite">
       <p className="eyebrow">404</p>
-      <h1 className="font-display text-[clamp(3.4rem,8vw,7rem)] font-extrabold uppercase leading-[.85] tracking-[-.03em]">
+      <h1 className="font-display text-[clamp(3.4rem,8vw,7rem)] font-extrabold uppercase leading-[1] tracking-[.015em]">
         Off the map.
       </h1>
       <p className="mt-6 max-w-md text-offwhite/65">
