@@ -9,7 +9,7 @@ export const site = {
   tagline: "Outthink. Outplan.",
   description:
     "Draw odds, rut timing and buck scores, researched for your hunt. DrawWise ranks Western tags against your points, maps whitetail rut timing by county, and scores animals from a photo. Start free.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://drawwise.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.drawwise.ai",
   patent: "Patent pending, App. No. 64/133,416",
   disclaimer:
     "DrawWise is an independent hunting planning and research tool and is not affiliated with any state wildlife agency. Draw odds, recommendations, season dates, legal restrictions, and photo scores must be verified against the relevant agency rules and, for official scoring, by an authorized measurer.",
