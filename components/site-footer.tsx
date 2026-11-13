@@ -26,6 +26,8 @@ export function SiteFooter() {
               </Link>
             ))}
             <a href={site.app.signin}>Sign in</a>
+            <a href="mailto:admin@drawwise.ai">admin@drawwise.ai</a>
+            <a href="tel:+12165451394">(216) 545-1394</a>
           </div>
         </div>
         <p className="footer-disclaimer">{site.disclaimer}</p>
