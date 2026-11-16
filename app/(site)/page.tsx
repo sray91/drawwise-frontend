@@ -16,7 +16,7 @@ import myPlan from "@/public/landing/my-plan.jpg";
 import rutCounty from "@/public/landing/rut-county.jpg";
 import scoutAntelope from "@/public/landing/scout-antelope.webp";
 import waterfowl from "@/public/landing/waterfowl.png";
-import { getRecentPosts } from "@/sanity/lib/fetch";
+import { getPosts } from "@/sanity/lib/fetch";
 
 export const metadata: Metadata = {
   title: "Draw odds, rut timing and buck scores",
@@ -261,9 +261,11 @@ function Plan() {
 }
 
 async function LatestPosts() {
-  const posts = await getRecentPosts(3);
+  const posts = await getPosts();
   if (posts.length === 0) return null;
 
+  // The track holds the list twice and slides left by exactly one list, so the loop has no seam.
+  // The second copy is hidden from assistive tech and cannot take focus.
   return (
     <section className="section posts-section" id="latest">
       <div className="wrap">
@@ -279,11 +281,20 @@ async function LatestPosts() {
             </span>
           </Link>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      </div>
+      <div className="posts-marquee" role="region" aria-label="Blog posts">
+        <ul className="posts-track" style={{ "--posts-count": posts.length } as React.CSSProperties}>
           {posts.map((post) => (
-            <PostCard key={post._id} post={post} />
+            <li key={post._id} className="posts-slide">
+              <PostCard post={post} sizes="340px" />
+            </li>
           ))}
-        </div>
+          {posts.map((post) => (
+            <li key={`${post._id}-loop`} className="posts-slide posts-slide-copy" aria-hidden="true" inert>
+              <PostCard post={post} sizes="340px" />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
