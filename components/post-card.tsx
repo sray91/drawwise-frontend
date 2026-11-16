@@ -5,7 +5,7 @@ import { formatDate } from "@/lib/format";
 import { SanityImage } from "./sanity-image";
 import logoOnDark from "@/public/brand/logo-on-dark.png";
 
-export function PostCard({ post }: { post: PostSummary }) {
+export function PostCard({ post, sizes }: { post: PostSummary; sizes?: string }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-md border border-line bg-offwhite transition-shadow hover:shadow-[0_26px_60px_rgba(23,28,24,.12)]">
       <Link
@@ -19,7 +19,7 @@ export function PostCard({ post }: { post: PostSummary }) {
             image={post.mainImage}
             width={800}
             height={450}
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            sizes={sizes ?? "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           />
         ) : (
