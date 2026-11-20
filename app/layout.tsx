@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import { Anton, Inter } from "next/font/google";
 import { site } from "@/lib/site";
+import { attributionScript } from "@/lib/attribution";
 import "./globals.css";
 
 const anton = Anton({
@@ -44,6 +45,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${anton.variable} ${inter.variable}`}>
       <body>{children}</body>
       <GoogleAnalytics gaId="G-Q0PV5EE37S" />
+      {/* First-touch attribution: remembers the ad or site that brought the visitor and carries it into the app. */}
+      <Script id="dw-attribution" strategy="afterInteractive">
+        {attributionScript(site.app.origin)}
+      </Script>
       <Script id="ms-clarity" strategy="afterInteractive">
         {`(function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
