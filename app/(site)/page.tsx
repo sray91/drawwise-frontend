@@ -134,7 +134,7 @@ function Scoring() {
             ))}
           </div>
           <div className="section-actions">
-            <OfferCta href={site.app.score} label="Score a photo free" />
+            <OfferCta href={site.app.signupThen("score")} label="Score a photo free" />
           </div>
           <p className="scoring-fine">
             Photo scores are estimates, not official measurements.
