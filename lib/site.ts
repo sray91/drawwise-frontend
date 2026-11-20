@@ -23,8 +23,13 @@ export const site = {
    * The product key must be one the app's billing knows, or the pick is dropped.
    */
   app: {
+    /** The app's origin; the attribution script decorates links to it and reports landing views to it. */
+    origin: appUrl,
     signup: `${appUrl}/?signup=1`,
     signin: `${appUrl}/?signin=1`,
+    /** Sign up, then land on a task: next is one of draw, rut, score, explore, map, home (the app's allowlist). */
+    signupThen: (next: "draw" | "rut" | "score" | "explore" | "map" | "home") =>
+      `${appUrl}/?signup=1&next=${next}`,
     score: `${appUrl}/#/score`,
     product: (id: AppProduct, billing: "monthly" | "annual" = "annual") =>
       `${appUrl}/?product=${id}_${billing}`,
